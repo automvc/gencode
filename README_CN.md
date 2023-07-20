@@ -65,8 +65,7 @@ public static void main(String[] args) {
 <img src="gen-after.png">  
 
 ## 3. 使用postman测试:  
-<img src="postman-test.png"> 
-
+<img src="postman-test.png">  
 
 
 **Bee** 网址:  

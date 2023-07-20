@@ -70,7 +70,7 @@ illustration
 <img src="gen-after.png">  
 
 ## 3. test with postman:  
-<img src="postman-test.png"> 
+<img src="postman-test.png">  
 
 
 
