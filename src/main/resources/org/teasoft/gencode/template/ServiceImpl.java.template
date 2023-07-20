@@ -1,0 +1,47 @@
+package #{packageName}.serviceimpl;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+import org.teasoft.bee.osql.api.SuidRich;
+import org.teasoft.honey.osql.shortcut.BF;
+
+import #{packageName}.entity.#{entityName?up1};
+import #{packageName}.service.#{entityName?up1}Service;
+
+@Service
+public class #{entityName?up1}ServiceImpl implements #{entityName?up1}Service {
+
+	private SuidRich suidRich = BF.getSuidRich();
+
+	@Override
+	public int insert(#{entityName?up1} #{entityName}) {
+
+		return suidRich.insert(#{entityName});
+	}
+
+	@Override
+	public int count(#{entityName?up1} #{entityName}) {
+
+		return suidRich.count(#{entityName});
+	}
+
+	@Override
+	public List<#{entityName?up1}> select(#{entityName?up1} #{entityName}, int start, int size) {
+
+		return suidRich.select(#{entityName}, start, size);
+	}
+
+	@Override
+	public int update(#{entityName?up1} #{entityName}) {
+
+		return suidRich.update(#{entityName});
+	}
+
+	@Override
+	public int deleteById(Class<?> c, String ids) {
+
+		return suidRich.deleteById(c, ids);
+	}
+
+}

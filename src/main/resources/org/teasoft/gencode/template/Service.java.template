@@ -1,0 +1,18 @@
+package #{packageName}.service;
+
+import java.util.List;
+
+import #{packageName}.entity.#{entityName?up1};
+
+public interface #{entityName?up1}Service {
+
+	public int insert(#{entityName?up1} #{entityName});
+
+	public int count(#{entityName?up1} #{entityName});
+
+	public List<#{entityName?up1}> select(#{entityName?up1} #{entityName}, int start, int size);
+
+	public int update(#{entityName?up1} #{entityName});
+
+	public int deleteById(Class<?> c, String ids);
+}

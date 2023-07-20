@@ -1,0 +1,97 @@
+package #{packageName}.rest;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.teasoft.bee.osql.BeeSQLException;
+import org.teasoft.honey.osql.core.Logger;
+
+import org.teasoft.bee.mvc.Result;
+import #{packageName}.entity.#{entityName?up1};
+import #{packageName}.service.#{entityName?up1}Service;
+
+/**
+ * @author AiTeaSoft.com
+ * @since  2.1.7
+ */
+@RestController
+@RequestMapping("/#{entityName}")
+public class #{entityName?up1}Rest {
+	
+	@Autowired
+	#{entityName?up1}Service #{entityName}Service;
+	
+	@GetMapping("/list")
+	public Result list(#{entityName?up1} #{entityName},
+	     @RequestParam(value = "page", defaultValue = "1", required = false) int page, 
+		 @RequestParam(value = "size", defaultValue = "20", required = false) int size) {	
+	  Result  result =new Result();
+	  try{
+		  int total = #{entityName}Service.count(#{entityName});
+		  List<#{entityName?up1}> list=#{entityName}Service.select(#{entityName}, (page-1)*size, size);
+		  result.setRows(list);
+		  result.setTotal(total);
+	  } catch (BeeSQLException e) {
+		  result.setErrorMsg(e.getMessage());
+	  }catch (Exception e) {
+		  result.setErrorMsg("系统错误，请联系管理员!");
+		  Logger.error(e.getMessage(),e);
+	  }
+		
+	   return result;
+	}
+	
+	@PostMapping("/add")
+	public Result insert(#{entityName?up1} #{entityName}){
+		
+	  Result  result =new Result();
+	  try{
+		  int num=#{entityName}Service.insert(#{entityName});
+		  result.setTotal(num);
+		  if(num<=0) result.setErrorMsg("insert failed!");
+	  } catch (BeeSQLException e) {
+		  result.setErrorMsg(e.getMessage());
+	  }catch (Exception e) {
+		  result.setErrorMsg("系统错误，请联系管理员!");
+		  Logger.error(e.getMessage(),e);
+	  }
+	  return result;
+	}
+	
+	@PostMapping("/edit")
+	public Result update(#{entityName?up1} #{entityName}){
+		Result  result =new Result();
+		try{
+			int num=#{entityName}Service.update(#{entityName});
+			result.setTotal(num);
+			if(num<=0) result.setErrorMsg("update failed!");
+	    } catch (BeeSQLException e) {
+		    result.setErrorMsg(e.getMessage());
+	    }catch (Exception e) {
+		  result.setErrorMsg("系统错误，请联系管理员!");
+		  Logger.error(e.getMessage(),e);
+	   }
+		return result;
+	}
+	
+	@PostMapping("/del")
+	public Result delete(String ids) {
+		Result result = new Result();
+		try {
+			int num=#{entityName}Service.deleteById(#{entityName?up1}.class, ids);
+			result.setTotal(num);
+			if (num <= 0) result.setErrorMsg("delete failed!");
+		} catch (BeeSQLException e) {
+			result.setErrorMsg(e.getMessage());
+		}catch (Exception e) {
+		  result.setErrorMsg("系统错误，请联系管理员!");
+		  Logger.error(e.getMessage(),e);
+	   }
+		return result;
+	}
+}
