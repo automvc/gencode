@@ -56,6 +56,16 @@ Detail:
 	
 ```
 
+gen-before:  
+<img src="gen-before.png"  width="520" height="640">  
+
+gen-after:  
+<img src="gen-after.png"  width="520" height="640">  
+
+test with postman:  
+<img src="postman-test.png"  width="520" height="640"> 
+
+
 **Bee** 网址:  
 https://github.com/automvc/bee  
 
