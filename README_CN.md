@@ -57,13 +57,13 @@ Detail:
 ```
 
 gen-before:  
-<img src="gen-before.png"  width="520" height="640">  
+<img src="gen-before.png">  
 
 gen-after:  
-<img src="gen-after.png"  width="520" height="640">  
+<img src="gen-after.png">  
 
 test with postman:  
-<img src="postman-test.png"  width="520" height="640"> 
+<img src="postman-test.png"> 
 
 
 **Bee** 网址:  
