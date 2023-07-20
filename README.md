@@ -33,7 +33,7 @@ public static void main(String[] args) {
 }
 ```
 
-Detail: 
+## 3.Detail: 
 
 ```java
 	public static void main(String[] args) {
@@ -61,15 +61,16 @@ Detail:
 	
 ```
 
+illustration
+=========	
+## 1. gen-before:  
+<img src="gen-before.png">  
 
-gen-before:  
-<img src="gen-before.png"  width="520" height="640">  
+## 2. gen-after:  
+<img src="gen-after.png">  
 
-gen-after:  
-<img src="gen-after.png"  width="520" height="640">  
-
-test with postman:  
-<img src="postman-test.png"  width="520" height="640"> 
+## 3. test with postman:  
+<img src="postman-test.png"> 
 
 **Bee** :  
 https://github.com/automvc/bee  

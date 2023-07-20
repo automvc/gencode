@@ -28,7 +28,7 @@ public static void main(String[] args) {
 }
 ```
 
-Detail: 
+## 3.Detail: 
 
 ```java
 	public static void main(String[] args) {
@@ -56,15 +56,15 @@ Detail:
 	
 ```
 
-illustration
+效果图
 =========	
-## gen-before:  
+## 1. 自动生成代码前:  
 <img src="gen-before.png">  
 
-## gen-after:  
+## 2. 自动生成代码后:  
 <img src="gen-after.png">  
 
-## test with postman:  
+## 3. 使用postman测试:  
 <img src="postman-test.png"> 
 
 
