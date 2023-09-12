@@ -16,7 +16,6 @@ Bee，互联网新时代的 Java ORM 框架，支持 Sharding；JDBC，Android�
 			<groupId>org.teasoft</groupId>
 			<artifactId>gencode</artifactId>
 			<version>2.1.7</version>
-			<type>pom</type>
 		</dependency>
 ```
 
