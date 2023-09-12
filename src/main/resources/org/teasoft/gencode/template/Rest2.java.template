@@ -80,7 +80,7 @@ public class #{entityName?up1}Rest {
 		try {
 			int num = #{entityName}Service.update(#{entityName});
 			result.setTotal(num);
-			if (num >= 1) {
+			if (num > 0) {
 				result.setMsg(Const.MSG_OK);
 				result.setCode(Const.CODE_OK);
 			} else if (num == 0) {
@@ -104,7 +104,7 @@ public class #{entityName?up1}Rest {
 		try {
 			int num = #{entityName}Service.deleteById(#{entityName?up1}.class, ids);
 			result.setTotal(num);
-			if (num >= 1) {
+			if (num > 0) {
 				result.setMsg(Const.MSG_OK);
 				result.setCode(Const.CODE_OK);
 			} else if (num == 0) {
