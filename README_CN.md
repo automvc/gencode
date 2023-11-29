@@ -8,6 +8,10 @@ Controller/Action + service (+ dao).
 Bee，互联网新时代的 Java ORM 框架，支持 Sharding；JDBC，Android，HarmonyOS；支持多种关系型数据库，还支持 NoSQL 的 Cassandra，Mongodb(V2.1) 等；更快、更简单、更自动，开发速度快，运行快，更智能！  
 支持多种关系型数据库：MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL,SQL Server,Access 等。     
 
+### **V2.1.8**
+1. Bee支持生成Javabean时,能生成Swagger注解. 
+2. Bee多表关联支持插入,更新,删除. 
+
 快速开始:
 =========	
 ## 1.添加依赖     
@@ -15,7 +19,7 @@ Bee，互联网新时代的 Java ORM 框架，支持 Sharding；JDBC，Android�
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>gencode</artifactId>
-			<version>2.1.7</version>
+			<version>2.1.8</version>
 		</dependency>
 ```
 
