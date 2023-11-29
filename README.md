@@ -12,6 +12,10 @@ It supports various relational databases, as well as NoSQL databases such as Cas
 Bee is faster, simpler, and more automated, allowing for faster development and execution, and it is also more intelligent.   
 It supports multiple relational databases, including MySQL,MariaDB,Oracle,H2,SQLite,PostgreSQL,SQL Server,Access.   
 
+### **V2.1.8** 
+1. Bee supports generating Swagger annotations when generating Javabeans 
+2. Bee multi table association supports insertion, update, and deletion 
+
 
 quick start:
 =========	
@@ -20,7 +24,7 @@ quick start:
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>gencode</artifactId>
-			<version>2.1.7</version>
+			<version>2.1.8</version>
 			<type>pom</type>
 		</dependency>
 ```
