@@ -24,7 +24,7 @@ quick start:
 		<dependency>
 			<groupId>org.teasoft</groupId>
 			<artifactId>gencode</artifactId>
-			<version>2.1.8</version>
+			<version>2.2</version>
 			<type>pom</type>
 		</dependency>
 ```
