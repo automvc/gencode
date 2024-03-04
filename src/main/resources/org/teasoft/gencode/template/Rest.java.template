@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,8 +17,9 @@ import #{packageName}.entity.#{entityName?up1};
 import #{packageName}.service.#{entityName?up1}Service;
 
 /**
+ * Restufl Controller/Action
  * @author AiTeaSoft.com
- * @since  2.1.7
+ *  
  */
 @RestController
 @RequestMapping("/#{entityName}")
@@ -47,13 +49,14 @@ public class #{entityName?up1}Rest {
 	}
 	
 	@PostMapping("/add")
-	public Result insert(#{entityName?up1} #{entityName}){
+	public Result insert(@RequestBody #{entityName?up1} #{entityName}){
 		
 	  Result  result =new Result();
 	  try{
 		  int num=#{entityName}Service.insert(#{entityName});
 		  result.setTotal(num);
-		  if(num<=0) result.setErrorMsg("insert failed!");
+		  if(num==0) result.setErrorMsg("Affect 0!");
+		  if(num<0) result.setErrorMsg("insert failed!");
 	  } catch (BeeSQLException e) {
 		  result.setErrorMsg(e.getMessage());
 	  }catch (Exception e) {
@@ -64,12 +67,13 @@ public class #{entityName?up1}Rest {
 	}
 	
 	@PostMapping("/edit")
-	public Result update(#{entityName?up1} #{entityName}){
+	public Result update(@RequestBody #{entityName?up1} #{entityName}){
 		Result  result =new Result();
 		try{
 			int num=#{entityName}Service.update(#{entityName});
 			result.setTotal(num);
-			if(num<=0) result.setErrorMsg("update failed!");
+			if(num==0) result.setErrorMsg("Affect 0!");
+			else if(num<0) result.setErrorMsg("update failed!");
 	    } catch (BeeSQLException e) {
 		    result.setErrorMsg(e.getMessage());
 	    }catch (Exception e) {
@@ -85,7 +89,8 @@ public class #{entityName?up1}Rest {
 		try {
 			int num=#{entityName}Service.deleteById(#{entityName?up1}.class, ids);
 			result.setTotal(num);
-			if (num <= 0) result.setErrorMsg("delete failed!");
+			if (num == 0) result.setErrorMsg("Affect 0!");
+			else if (num < 0) result.setErrorMsg("delete failed!");
 		} catch (BeeSQLException e) {
 			result.setErrorMsg(e.getMessage());
 		}catch (Exception e) {

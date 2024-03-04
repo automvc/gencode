@@ -10,6 +10,7 @@ import java.util.Map;
 
 import org.teasoft.honey.osql.autogen.GenBean;
 import org.teasoft.honey.osql.autogen.GenConfig;
+import org.teasoft.honey.osql.core.Logger;
 import org.teasoft.honey.osql.name.NameUtil;
 import org.teasoft.honey.osql.util.FileUtil;
 import org.teasoft.honey.osql.util.StringUtil;
@@ -125,7 +126,7 @@ public class GenCode {
 				stringBuilder.append(line).append("\n");
 			}
 		} catch (IOException e) {
-			e.printStackTrace();
+			Logger.error(e.getMessage(),e);
 		}
 
 		return stringBuilder.toString();

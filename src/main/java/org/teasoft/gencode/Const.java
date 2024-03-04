@@ -6,6 +6,8 @@ package org.teasoft.gencode;
  * @since 2.1.7
  */
 public class Const {
+	
+	private Const() {}
 
 	public static final String MSG_OK = "SUCCESS";
 	public static final String MSG_ERROR = "ERROR";
